@@ -1,7 +1,7 @@
 {
-  "name": "clock-dashboard",
+  "name": "ipad-weather-clock",
   "type": "module",
-  "version": "1.21.5",
+  "version": "0.1.0",
   "private": false,
   "packageManager": "pnpm@9.6.0",
   "license": "CC-BY-NC-SA-4.0",
@@ -17,10 +17,8 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "@fontsource/huninn": "^5.0.0",
     "@vueuse/core": "^14.1.0",
     "clsx": "^2.1.0",
-    "home-assistant-js-websocket": "^9.6.0",
     "lucide-vue-next": "^0.300.0",
     "lunar-typescript": "^1.7.5",
     "pinia": "^3.0.4",

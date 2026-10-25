@@ -153,7 +153,7 @@ watch(idle, (newIdle) => {
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  font-family: 'ClockDigits', 'SFCompactRounded', 'Huninn', sans-serif;
+  font-family: 'Barlow Condensed', sans-serif;
   font-weight: 500;
   font-style: normal;
 }

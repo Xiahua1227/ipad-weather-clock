@@ -19,14 +19,18 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: [],
       manifest: {
-        id: 'clock-dashboard',
-        name: '天气时钟',
+        id: './',
+        name: 'iPad 天气时钟',
         short_name: '天气时钟',
-        description: '一个简约的在线天气时钟',
-        theme_color: '#000000',
-        background_color: '#000000',
+        description: '为旧款 iPad 设计的横屏天气时钟',
+        lang: 'zh-CN',
+        start_url: './',
+        scope: './',
+        theme_color: '#f5f3ee',
+        background_color: '#f5f3ee',
         display: 'standalone',
         display_override: ['window-controls-overlay'],
+        orientation: 'landscape',
         icons: [
           {
             src: 'favicon/web-app-manifest-192x192.png',
@@ -51,19 +55,6 @@ export default defineConfig({
             sizes: '512x512',
             type: 'image/png',
             purpose: 'maskable',
-          },
-        ],
-        screenshots: [
-          {
-            src: 'screenshots/1.png',
-            sizes: '2048x1536',
-            type: 'image/png',
-            form_factor: 'wide',
-          },
-          {
-            src: 'screenshots/5.png',
-            sizes: '2532x1170',
-            type: 'image/png',
           },
         ],
       },

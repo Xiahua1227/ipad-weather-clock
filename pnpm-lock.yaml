@@ -8,18 +8,12 @@ importers:
 
   .:
     dependencies:
-      '@fontsource/huninn':
-        specifier: ^5.0.0
-        version: 5.2.2
       '@vueuse/core':
         specifier: ^14.1.0
         version: 14.1.0(vue@3.5.26(typescript@5.9.3))
       clsx:
         specifier: ^2.1.0
         version: 2.1.1
-      home-assistant-js-websocket:
-        specifier: ^9.6.0
-        version: 9.6.0
       lucide-vue-next:
         specifier: ^0.300.0
         version: 0.300.0(vue@3.5.26(typescript@5.9.3))
@@ -935,9 +929,6 @@ packages:
   '@eslint/plugin-kit@0.4.1':
     resolution: {integrity: sha512-43/qtrDUokr7LJqoF2c3+RInu/t4zfrpYdoSDfYyhg52rwLV6TnOvdG4fXm7IkSB3wErkcmJS9iEhjVtOSEjjA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-
-  '@fontsource/huninn@5.2.2':
-    resolution: {integrity: sha512-gxmIWHWUcEbIPhkr0buDHIpy2gohJC+U7wFE+l/jU/KgfEp/U1smCGY1qRukbC2QPGFsuXgfBewCzGcfk9/+zA==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -2425,9 +2416,6 @@ packages:
   he@1.2.0:
     resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
     hasBin: true
-
-  home-assistant-js-websocket@9.6.0:
-    resolution: {integrity: sha512-TK8HWW6UjCsUdjIBQRB2sBbEya0VniOBFqFjgqSznJiB7YriNgN8jghyThxOkgxwrnt2eN6oWoZMCTSp1o7H+w==}
 
   hookable@5.5.3:
     resolution: {integrity: sha512-Yc+BQe8SvoXH1643Qez1zqLRmbA5rCL+sSmk6TVos0LWVfNIB7PGncdlId77WzLGSIB5KaWgTaNTs2lNVEI6VQ==}
@@ -5032,8 +5020,6 @@ snapshots:
       '@eslint/core': 0.17.0
       levn: 0.4.1
 
-  '@fontsource/huninn@5.2.2': {}
-
   '@humanfs/core@0.19.1': {}
 
   '@humanfs/node@0.16.7':
@@ -6712,8 +6698,6 @@ snapshots:
       function-bind: 1.1.2
 
   he@1.2.0: {}
-
-  home-assistant-js-websocket@9.6.0: {}
 
   hookable@5.5.3: {}
 

@@ -1,6 +1,17 @@
 import type { AirQualityApiResponse, WeatherApiResponse } from './types'
 import { mapQweatherIconToWmo } from '../utils/weather'
 
+async function fetchWithTimeout(url: string, timeout = 8000): Promise<Response> {
+  const controller = new AbortController()
+  const timer = setTimeout(() => controller.abort(), timeout)
+  try {
+    return await fetch(url, { signal: controller.signal })
+  }
+  finally {
+    clearTimeout(timer)
+  }
+}
+
 interface QweatherNowResponse {
   code: string
   now?: {
@@ -118,7 +129,7 @@ async function qweatherGet<T extends { code: string }>(
   url.searchParams.set('lang', toQweatherLang(options.lang))
 
   // 不设置自定义请求头，避免触发 CORS 预检（iOS 12 等旧 WebKit 会因此失败）
-  const response = await fetch(url.toString())
+  const response = await fetchWithTimeout(url.toString())
   if (!response.ok) {
     throw await toQweatherHttpError(path, response)
   }
@@ -224,7 +235,7 @@ export async function fetchQweatherAirQualityData(
   url.searchParams.set('key', options.key)
   url.searchParams.set('lang', toQweatherLang(options.lang))
 
-  const response = await fetch(url.toString())
+  const response = await fetchWithTimeout(url.toString())
   const data = await response.json() as QweatherAirV1Response
   if (!response.ok) {
     const detail = data.error?.detail || data.error?.title || response.statusText

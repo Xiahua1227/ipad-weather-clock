@@ -17,5 +17,16 @@
     "skipLibCheck": true
   },
   "references": [{ "path": "./tsconfig.node.json" }],
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "exclude": [
+    "src/api/ha-websocket.ts",
+    "src/components/AlmanacModal.vue",
+    "src/components/WeatherEffects.vue",
+    "src/components/settings/CalendarSettings.vue",
+    "src/components/settings/SmartHomeSettings.vue",
+    "src/components/settings/TestHAConnection.vue",
+    "src/stores/ha.ts",
+    "src/views/CalendarView.vue",
+    "src/views/SmartHomeView.vue"
+  ]
 }

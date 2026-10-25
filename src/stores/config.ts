@@ -1,4 +1,3 @@
-import type { HAConfig } from '../types'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import { normalizeLocale } from '../i18n'
@@ -7,18 +6,8 @@ const defaultLanguage = normalizeLocale(typeof navigator !== 'undefined' ? navig
 
 export const useConfigStore = defineStore('config', () => {
   const showDrawer = ref(false)
-  const activeTab = ref<'general' | 'clock' | 'weather' | 'calendar' | 'smart'>('general')
+  const activeTab = ref<'general' | 'clock' | 'weather'>('general')
   const language = ref(defaultLanguage)
-
-  const haLayout = ref({
-    /** 每行显示的设备数量：3、4 或 5 */
-    columns: 3,
-  })
-  const haConfig = ref<HAConfig>({
-    url: '',
-    token: '',
-    entities: [],
-  })
 
   const clockConfig = ref({
     /** 时钟颜色 */
@@ -37,13 +26,6 @@ export const useConfigStore = defineStore('config', () => {
     digitSpacing: -0.18,
   })
 
-  const calendarConfig = ref({
-    /** 一周的开始：0 为周日，1 为周一 */
-    weekStartDay: 0,
-    /** 显示法定节假日 */
-    showHolidays: true,
-  })
-
   const layoutConfig = ref({
     /** 仅显示时钟 */
     clockOnlyMode: false,
@@ -55,11 +37,19 @@ export const useConfigStore = defineStore('config', () => {
     showFestival: true,
   })
 
+  const dashboardConfig = ref({
+    /** 昼夜主题跟随天气、固定浅色或固定深色 */
+    themeMode: 'auto' as 'auto' | 'day' | 'night',
+    /** auto 表示跟随主题文字颜色 */
+    clockColor: 'auto',
+    showLunar: true,
+    showTip: true,
+    showPrecipitation: true,
+  })
+
   return {
-    haLayout,
-    haConfig,
     clockConfig,
-    calendarConfig,
+    dashboardConfig,
     layoutConfig,
     showDrawer,
     activeTab,

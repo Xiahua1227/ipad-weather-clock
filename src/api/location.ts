@@ -1,7 +1,18 @@
 import type { BigDataCloudLocationResponse, Coordinates } from './types'
 
+async function fetchWithTimeout(url: string, timeout = 6000): Promise<Response> {
+  const controller = new AbortController()
+  const timer = setTimeout(() => controller.abort(), timeout)
+  try {
+    return await fetch(url, { signal: controller.signal })
+  }
+  finally {
+    clearTimeout(timer)
+  }
+}
+
 export async function reverseGeocode(lat: number, lon: number, language: string): Promise<BigDataCloudLocationResponse> {
-  const response = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=${language}`)
+  const response = await fetchWithTimeout(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=${language}`)
 
   if (!response.ok) {
     throw new Error(`Reverse geocoding API error: ${response.statusText}`)
@@ -12,7 +23,7 @@ export async function reverseGeocode(lat: number, lon: number, language: string)
 }
 
 export async function getLocationByIp(language: string): Promise<BigDataCloudLocationResponse> {
-  const res = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?localityLanguage=${language}`)
+  const res = await fetchWithTimeout(`https://api.bigdatacloud.net/data/reverse-geocode-client?localityLanguage=${language}`)
 
   if (!res.ok) {
     throw new Error(`IP location API error: ${res.statusText}`)
