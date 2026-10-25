@@ -4,6 +4,13 @@
 
 > 本项目是 [`teojs/clock-dashboard`](https://github.com/teojs/clock-dashboard) 的非商业衍生版本，基于上游 1.21.5（`7ded058b63e14b85b1afc6e63d8b31481c28ed77`）修改。它不是原项目的官方版本。
 
+## 在线使用
+
+- GitHub Pages：<https://xiahua1227.github.io/ipad-weather-clock/>
+- GitHub 仓库：<https://github.com/Xiahua1227/ipad-weather-clock>
+
+在 iPad Safari 中打开 Pages 地址后，可通过“分享 → 添加到主屏幕”作为横屏常驻页面使用。在线版本不需要 Mac 保持开机。
+
 ## 当前功能
 
 - 适配 4:3 横屏 iPad 的单页时钟与天气布局。
@@ -54,13 +61,7 @@ pnpm preview --host 0.0.0.0
 
 ## GitHub Pages
 
-仓库包含 [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml)。在 GitHub 仓库的 **Settings → Pages → Build and deployment** 中选择 **GitHub Actions** 后，每次推送 `main` 分支都会自动构建和发布 `dist/`。
-
-发布地址通常为：
-
-```text
-https://<用户名>.github.io/<仓库名>/
-```
+仓库包含 [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml)。GitHub Pages 已设置为使用 GitHub Actions；每次推送 `main` 分支都会自动构建和发布 `dist/`。
 
 本项目已使用相对构建基址，并对字体、图标和 PWA 资源做了子目录兼容处理。
 
